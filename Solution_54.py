@@ -45,16 +45,14 @@ class Solution_54:
 
         return output
 
-    '''
-    This is doing basically the same thing as the solution I have come with even the time complexity is similar. However,
-    the way they have achieved that was pretty interesting. Instead of keeping a tracker of which values are put into 
+    '''The solution that I have come up with had a time complexity of O(n^2) and this solution had O(mn). The way 
+    they have achieved that was pretty interesting. Instead of keeping a tracker of which values are put into  
     output, this algorithm started trimming off the original matrix as we populate the output. This way we are saving 
-    space, the code looks cleaner and there is no need for coming up with logic based on indices. Coming up with logic
-    based on indices takes time as we have to figure out a pattern based on our desired behaviour not to mention problem
-    with understanding the code later on. The strategy of popping items from the original matrix was fascinating.
-    This solution was found from an youtube video which was originally submitted to LeetCode by another person. Shout
-    out the person who came up with this strategy.
-    '''
+    space, the code looks cleaner and there is no need for coming up with logic based on indices. Coming up with 
+    logic based on indices takes time as we have to figure out a pattern based on our desired behaviour not to 
+    mention problem with understanding the code later on. The strategy of popping items from the original matrix was 
+    fascinating. This solution was found from an youtube video which was originally submitted to LeetCode by another 
+    person. Shout out the person who came up with this strategy. '''
     def spiralOrder_clean(self, matrix: List[List[int]]) -> List[int]:
         output = []
 
