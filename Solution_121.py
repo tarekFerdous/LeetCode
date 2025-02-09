@@ -59,7 +59,24 @@ class Solution_121:
                 max_profit = (price - min_price)
         return max_profit
 
+    '''
+    This was a test to see if there is any improvement in this logic where there are two pointers to solve it. Even
+    though the complexity is O(n) same as before, it does not perform better than "maxProfit_clean".
+    '''
+    def maxProfit_test(self, prices: List[int]) -> int:
+        l, r = 0, 1
+        max_profit = 0
+        while r != len(prices):
+            if prices[l] < prices[r]:
+                max_profit = max(max_profit, prices[r]-prices[l])
+            else:
+                l = r
+            r += 1
+
+        return max_profit
+
 
 solution = Solution_121()
 print(solution.maxProfit([int(v) for v in input()[1:-1].split(',')]))
 print(solution.maxProfit_clean([int(v) for v in input()[1:-1].split(',')]))
+print(solution.maxProfit_test([int(v) for v in input()[1:-1].split(',')]))
